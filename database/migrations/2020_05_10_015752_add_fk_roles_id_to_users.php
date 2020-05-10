@@ -14,8 +14,8 @@ class AddFkRolesIdToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('roles_id');    
-            $table->foreign('roles_id')->references('id')->on('roles')->onDelete('cascade');
+          
+            $table->foreign('roles_id')->references('id')->on('roles');
         });
     }
 
@@ -26,8 +26,6 @@ class AddFkRolesIdToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            addColum('roles_id');
-        });
+        Schema::dropIfExists('users');
     }
 }
