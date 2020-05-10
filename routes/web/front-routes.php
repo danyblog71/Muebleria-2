@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'StoreControllers\StoreController@index')->name('tienda.index');
+
+Route::get('tienda/{texto}', 'StoreControllers\StoreController@showProducts')->name('tienda.show_products');
+
+Route::get('tienda/detalle/{id}', 'StoreControllers\StoreController@productDetail')->name('tienda.show_product_detail');
