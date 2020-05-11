@@ -7,6 +7,9 @@
 </head>
 <div class="container-fluid bg-primary"  >
   <h2 align="center">Muebleria</h2>  
+  @auth
+    {{auth()->user()->name}}
+  @endauth
 </div>
 <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #FFE65C";>
   <a class="navbar-brand" href="#">Muebleria</a>
@@ -24,6 +27,11 @@
       <li class="nav-item">
         <a class="nav-link" href=" {{ route('tienda.show_products',$texto='Ofertas')}}">Ofertas</a>
       </li>
+      @guest
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('login')}}">Login</a>
+        </li>                      
+      @endguest
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categorias
@@ -34,9 +42,18 @@
             @endforeach
         </div>
       </li> 
+      @auth       
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('login')}}" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">Logout</a>
+        </li> 
+      @endauth 
     </ul>
   </div>
 </nav>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
 <body>
   @yield('contenido')
   <script src="{{asset('assets/jquery/jquery.min.js')}}"></script>
