@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 </head>
+<div class="container-fluid bg-primary"  >
+  <h2 align="center">Muebleria</h2>  
+</div>
 <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #FFE65C";>
   <a class="navbar-brand" href="#">Muebleria</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +38,9 @@
   </div>
 </nav>
 <body>
-	@yield('contenido')
+  @yield('contenido')
+  <script src="{{asset('assets/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+  @yield('script')
 </body>
 </html>

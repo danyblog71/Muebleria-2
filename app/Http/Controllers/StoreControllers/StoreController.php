@@ -21,14 +21,16 @@ class StoreController extends Controller
 
     public function showProducts($texto)
     {
+        $categories = Category::all();
         $products = Product::orderBy('created_at', 'desc')->get();
-        return view('store.show_products', compact('products','texto' ));
+        return view('store.show_products', compact('categories','products','texto' ));
     }
 
     public function productDetail($id)
     {
+        $categories = Category::all();
         $product = Product:: findOrFail($id);
-        return view('store.product_detail', compact('product'));
+        return view('store.product_detail', compact('categories','product'));
     }
 
     /**
