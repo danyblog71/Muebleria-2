@@ -38,3 +38,16 @@ Route::delete('/admin/products/{id}','AdminControllers\ProductController@destroy
 Route::get('/admin/products/{product}/edit', 'AdminControllers\ProductController@edit')->name('admin.products_edit');
 
 Route::put('/admin/products/{product}/update', 'AdminControllers\ProductController@update')->name('admin.products_update');
+
+//products_detail
+Route::get('/admin/products/{product}/detalles}', 'AdminControllers\ProductDetailController@index')->name('admin.productDetails_index');
+
+Route::get('/admin/products/{id}/create_detalles', 'AdminControllers\ProductDetailController@create')->name('admin.productDetails_create');
+
+Route::post('/admin/products/save', 'AdminControllers\ProductDetailController@store')->name('admin.productsDetails_store');
+
+//Route::delete('/admin/products/{id}','AdminControllers\ProductDetailController@destroy')->name('admin.products_delete');
+
+//Route::get('/admin/products/{product}/edit', 'AdminControllers\ProductDetailController@edit')->name('admin.products_edit');
+
+//Route::put('/admin/products/{product}/update', 'AdminControllers\ProductDetailController@update')->name('admin.products_update');
