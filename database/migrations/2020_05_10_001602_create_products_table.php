@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->decimal('cost', 7, 2);
             $table->integer('stock');
             $table->unsignedBigInteger('categories_id');
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
