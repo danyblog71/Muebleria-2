@@ -56,8 +56,10 @@
 </form>
 <body>
   @yield('contenido')
+  @include('layouts.footer')
   <script src="{{asset('assets/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+  <script src="https://kit.fontawesome.com/777c90aafe.js" crossorigin="anonymous"></script>
   @yield('script')
 </body>
 </html>

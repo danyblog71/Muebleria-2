@@ -33,6 +33,7 @@
   @csrf
 </form>
 <body>
-	@yield('contenido')
+  @yield('contenido')
+  
 </body>
 </html>

@@ -1,3 +1,41 @@
+:root{
+    --footer-bg-color:gray;
+    --green-primary:rgba(152,214,109,255);
+    --green-secondary:rgba(152,168,109,255);
+    --gray-prymary:gray;
+}
+
+
 .container-fluid{
     height: 200px;
 }
+.title-general{
+    font-size: 2em;
+}
+.green-line{
+   
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-color: var(--green-primary);
+    width: 100%;
+    
+}
+.green-line-absolute{
+    border-bottom: 10px;
+    border-bottom-style: solid;
+    border-color: var(--green-primary);
+    width: 100%;
+}
+
+.green-circle{
+ background-color: var(--green-primary);
+ border-radius: 80%;
+ /*border: 2px solid green;*/
+ padding:10px;
+ box-shadow: 5px 2px 2px 0px var(--green-secondary);
+}
+.footer {
+   
+    width: 100%;
+ }
+ 
