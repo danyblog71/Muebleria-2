@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\StoreControllers;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
-use App\Models\Category;
+use App\Models\{Product, Category, ProductDetail,Image};
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -22,15 +21,21 @@ class StoreController extends Controller
     public function showProducts($texto)
     {
         $categories = Category::all();
-        $products = Product::orderBy('created_at', 'desc')->get();
-        return view('store.show_products', compact('categories','products','texto' ));
+        $products = Product::join("images","images.product_id","=","products.id")->where('images.priority','=',"Principal")->get();
+    
+        return view('store.show_products', compact('categories','products', 'texto' ));
     }
 
     public function productDetail($id)
     {
         $categories = Category::all();
-        $product = Product:: findOrFail($id);
-        return view('store.product_detail', compact('categories','product'));
+        
+        $product = Product::findOrFail($id);
+        $product_detail = Product::find($id)->ProductDetail;
+        $products_image = Product::find($id)->Image;
+        return view('store.product_detail', compact('categories', 'product', 'product_detail', 'products_image'));
+
+
     }
 
     /**

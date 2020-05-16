@@ -14,11 +14,12 @@ class CreateProductDetailsTable extends Migration
     public function up()
     {
         Schema::create('product_details', function (Blueprint $table) {
-            $table->unsignedBigInteger('products_id');
-            $table->foreign('products_id')->references('id')->on('products');
+            $table->bigIncrements('details_id');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');;
             $table->integer('number_of_pieces');
             $table->text('measurements');
-            $table->decimal('weight', 3, 2);
+            $table->decimal('weight', 7,2);
             $table->string('material', 100);
             $table->string('colors', 100);
             $table->string('desing', 100);
