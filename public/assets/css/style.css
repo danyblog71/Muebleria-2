@@ -1,8 +1,8 @@
 :root{
-    --footer-bg-color:gray;
-    --green-primary:rgba(152,214,109,255);
-    --green-secondary:rgba(152,168,109,255);
-    --gray-prymary:gray;
+    --footer-bg-color: #f7f7f7;
+    --green-primary:#cceabb;
+    /*--green-secondary:#c7e0b8;*/
+    --gray-prymary:#f7f7f7;
 }
 
 
@@ -29,13 +29,17 @@
 
 .green-circle{
  background-color: var(--green-primary);
- border-radius: 80%;
+ padding:30px;
+ border-radius: 100%;
  /*border: 2px solid green;*/
  padding:10px;
- box-shadow: 5px 2px 2px 0px var(--green-secondary);
+ /*box-shadow: 5px 2px 2px 0px var(--green-secondary);*/
 }
 .footer {
    
     width: 100%;
  }
  
+ .bg-footer{
+     background-color: var(--footer-bg-color);
+ }

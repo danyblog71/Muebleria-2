@@ -24,7 +24,7 @@ Route::delete('/admin/categorias/{id}','AdminControllers\CategoryController@dest
 
 Route::get('/admin/categorias/{id}/edit', 'AdminControllers\CategoryController@edit')->name('admin.category_edit')->middleware('IsAdmin');
 
-Route::put('/admin/categorias/{id}/update', 'AdminControllers\CategoryController@update')->name('admin.category_update')->middleware('IsAdmin');
+Route::put('/admin/categorias/{id}/update', 'AdminControllers\CategoryController@update')->name       ('admin.category_update')->middleware('IsAdmin');
 
 //products
 Route::get('/admin', 'AdminControllers\ProductController@index')->name('admin.products_index')->middleware('IsAdmin');
@@ -35,4 +35,7 @@ Route::post('/admin/products/save', 'AdminControllers\ProductController@store')-
 
 Route::delete('/admin/products/{id}','AdminControllers\ProductController@destroy')->name('admin.products_delete')->middleware('IsAdmin');
 Route::get('/admin/products/{product}/edit', 'AdminControllers\ProductController@edit')->name('admin.products_edit')->middleware('IsAdmin');
+
 Route::put('/admin/products/{product}/update', 'AdminControllers\ProductController@update')->name('admin.products_update')->middleware('IsAdmin');
+
+Route::get('/admin/image', 'AdminControllers\ImageController@index')->name('admin.images_show')->middleware('IsAdmin');
