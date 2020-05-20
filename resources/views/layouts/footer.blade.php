@@ -1,5 +1,5 @@
-<div class = " footer bg-secondary green-line-absolute">
-   <div class = "  bg-secondary text-white container ">
+<div class = " footer bg-footer green-line-absolute">
+   <div class = "  bg-footer  container ">
       <div class = "row  mt-2 mb-2 pb-2 green-line-absolute">
          <div class = "col-md-8"> 
             <span class=" text title-general">
@@ -7,9 +7,9 @@
             </span>
          </div>
          <div class = "col-md-4 mt-3 mb-2 "> 
-            <i class="green-circle fab fa-facebook-f"></i>
-            <i class="green-circle fab fa-twitter ml-5"></i>
-            <i class="fab fa-instagram ml-5 green-circle"></i>
+            <i class="green-circle fab fa-facebook-f ml-5 "></i>
+            <i class="green-circle fab fa-twitter ml-5 "></i>
+            <i class="green-circle fab fa-instagram ml-5  "></i>
          </div>
       </div>
       
