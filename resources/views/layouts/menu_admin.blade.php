@@ -15,10 +15,13 @@
         <a class="nav-link" href=" {{ route('admin.products_index') }}">Mostrar Productos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href=" {{ route('admin.category_index',$texto='Todos Los Productos')}}">Categorias</a>
+        <a class="nav-link" href=" {{ route('admin.user_index')}}">Usuarios</a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href=" {{ route('admin.category_index',$texto='Ofertas')}}">Ofertas</a>
+        <a class="nav-link" href=" {{ route('admin.category_index')}}">Categorias</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href=" {{ route('admin.category_index')}}">Ofertas</a>
       </li>
       @auth       
         <li class="nav-item">

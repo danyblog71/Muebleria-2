@@ -39,3 +39,11 @@ Route::get('/admin/products/{product}/edit', 'AdminControllers\ProductController
 Route::put('/admin/products/{product}/update', 'AdminControllers\ProductController@update')->name('admin.products_update')->middleware('IsAdmin');
 
 Route::get('/admin/image', 'AdminControllers\ImageController@index')->name('admin.images_show')->middleware('IsAdmin');
+
+//Routes Admin User//s
+Route::get('/admin/users', 'AdminControllers\UserController@index')->name('admin.user_index')->middleware('IsAdmin');
+Route::get('/admin/users/crear', 'AdminControllers\UserController@create')->name('admin.user_create')->middleware('IsAdmin');
+Route::post('/admin/users/save', 'AdminControllers\UserController@store')->name('admin.user_store')->middleware('IsAdmin');
+Route::get('/admin/users/{id}/edit', 'AdminControllers\UserController@edit')->name('admin.user_edit')->middleware('IsAdmin');
+Route::put('/admin/users/{id}/update', 'AdminControllers\UserController@update')->name('admin.user_update')->middleware('IsAdmin');
+Route::get('/admin/users/{id}/delete', 'AdminControllers\UserController@destroy')->name('admin.user_delete')->middleware('IsAdmin');
